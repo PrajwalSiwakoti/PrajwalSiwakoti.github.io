@@ -1,1 +1,132 @@
-<h1>hi there</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+        }
+
+        .predict-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .predict-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #anotherRequiredRunRate, #actualRequiredRunRate {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Game</h1>
+        <form id="inputForm">
+            <label for="currentRun">Current Run:</label>
+            <input type="number" id="currentRun" name="currentRun" step="0.01" required><br>
+
+            <label for="currentOver">Current Over:</label>
+            <input type="number" id="currentOver" name="currentOver" step="0.01" required><br>
+
+            <label for="targetScore">Target:</label>
+            <input type="number" id="targetScore" name="targetScore" step="1"><br>
+
+            <p>Current Run Rate: <span id="currentRunRate">0.00</span></p>
+            <p>Required Run Rate: <span id="requiredRunRate">N/A</span></p>
+            <table id="projectedScores">
+                <thead>
+                    <tr>
+                        <th>At Run Rate</th>
+                        <th>5</th>
+                        <th>10</th>
+                        <th>12</th>
+                        <th>15</th>
+                        <th>20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div class="predict-container">
+            <div class="predict-header">Predict for</div>
+            <label for="targetRun">Target Run:</label>
+            <input type="number" id="targetRun" name="targetRun" step="1"><br>
+            <label for="targetOver">Target Over:</label>
+            <input type="number" id="targetOver" name="targetOver" step="0.01"><br>
+        </div>
+        <p>Required Run Rate: <span id="anotherRequiredRunRate">N/A</span></p>
+        <p>Actual Required Run Rate: <span id="actualRequiredRunRate">N/A</span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
