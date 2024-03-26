@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Calculate required run rate if target is present
             const targetScore = parseFloat(targetScoreInput.value);
             if (!isNaN(targetScore)) {
-                const requiredRunRate = (targetScore - currentRun/ 20 - currentOver).toFixed(2);
+                const requiredRunRate = ((targetScore - currentRun)/ (20 - currentOver)).toFixed(2);
                 requiredRunRateSpan.innerText = requiredRunRate;
             } else {
                 requiredRunRateSpan.innerText = "N/A";
