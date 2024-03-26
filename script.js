@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 requiredRunRateSpan.innerText = "N/A";
             }
+			
+			calculateActualRequiredRunRate();
         } else {
             // If one or both inputs are missing, display a message
             currentRunRateSpan.innerText = "N/A";
